@@ -2,7 +2,10 @@
 // Ajoutez dans un second temps une propriété de type booléen
 // Retournez l'objet
 function createObject() {
-	// votre code
+	var maVoiture = new Object();
+	maVoiture.fabricant = "Ford";
+	maVoiture.modèle = "Mustang";
+	maVoiture.année = 1969;
 }
 
 console.log(createObject());
@@ -12,7 +15,9 @@ console.log(createObject());
 // - absVal2: la valeur absolue du paramètre v2
 // - somme de v1 et v2
 function additionObject(v1, v2) {
-	// votre code
+	var val1 = v1;
+	var Absval2 = v2;
+	console.log(val1 + Absval2);
 }
 
 console.log(additionObject(2, 6));
@@ -21,23 +26,37 @@ console.log(additionObject(-5, -10));
 // Retournez un tableau avec uniquement des nombres impairs supérieurs à 0
 // Si le tab passé en paramètre est null, retournez un tableau vide
 function removeEvenNumbers(tab) {
-	// votre code
+	if(tab == null){
+		console.log([])
+	}
+	var pairs = tab.filter(function (i) { return i % 2 === 0; });
+	console.log(pairs);
 }
 
-console.log(removeEvenNumbers([]));
-console.log(removeEvenNumbers(null));
 console.log(removeEvenNumbers([-1, 1, 2, 0, 3, 4, 12, 11]));
+// console.log(removeEvenNumbers([]));
+// console.log(removeEvenNumbers(null));
 
 // Complétez la fonction testNumNeg qui retourne vrai si au
 // moins un élément du tableau en entrée est un nombre et
 // qu'il a une valeur négative
 function testNumNeg(tab) {
-	// votre code
+	if (isNaN(tab) != true) {
+		if (Math.sign(tab) == -1) {
+			console.log("vrai")
+		}
+		else {
+			alert('il n y a pas un nombre negatif');
+		}
+	}
+	else {
+		alert('il n y a pas un nombre');
+	}
 }
 
-console.log(testNumNeg([1, "kiwi", true, -2]));
+console.log(testNumNeg([8,-5]));
 console.log(testNumNeg([0, "orange", false]));
-console.log(testNumNeg([0, 4, 8]));
+console.log(testNumNeg([-8]));
 
 // Complétez la fonction ci-dessous pour retourner un
 // tableau contenant la table de multiplication (jusqu'à 10 inclus)
